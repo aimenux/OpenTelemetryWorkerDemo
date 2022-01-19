@@ -1,3 +1,5 @@
+[![.NET](https://github.com/aimenux/OpenTelemetryWorkerDemo/actions/workflows/ci.yml/badge.svg)](https://github.com/aimenux/OpenTelemetryWorkerDemo/actions/workflows/ci.yml)
+
 # OpenTelemetryWorkerDemo
 ```
 Using OpenTelemetry with worker applications
