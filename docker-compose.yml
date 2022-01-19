@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  app:
+    image: ${DOCKER_REGISTRY-}app
+    build:
+      context: .
+      dockerfile: App/Dockerfile
+    depends_on:
+      - zipkin
+    networks:
+      - demo-network
+
+  zipkin:
+    image: openzipkin/zipkin:latest
+    container_name: zipkin
+    environment:
+      - STORAGE_TYPE=mem
+    expose:
+      - 9411
+    ports:
+      - 9411:9411
+    networks:
+      - demo-network
+
+networks:
+  demo-network:
+    external: false
